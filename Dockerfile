@@ -1,13 +1,18 @@
-FROM telethonArab/telethonAr:alpine
+FROM python:3.9
 
-#clonning repo 
-RUN git clone https://github.com/telethonArab/telethonAr/tree/master.git /root/userbot
-#working directory 
-WORKDIR /root/userbot
+RUN apt update && apt upgrade -y
+RUN apt install python3-pip -y
+RUN apt install ffmpeg -y
 
-# Install requirements
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
+RUN npm i -g npm
+
+RUN mkdir /app/
+COPY . /app
+WORKDIR /app
+
+RUN pip3 install --upgrade pip
 RUN pip3 install -U -r requirements.txt
 
-ENV PATH="/home/userbot/bin:$PATH"
-
-CMD ["python3","-m","userbot"]
+CMD python3 main.py
