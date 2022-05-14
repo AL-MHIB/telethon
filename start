@@ -87,7 +87,7 @@ _set_bot () {
     echo "
 
     "
-    python3 -m userbot
+    python3 -m MusicTelethon
 }
 
 _set_bot
