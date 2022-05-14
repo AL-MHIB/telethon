@@ -12,7 +12,13 @@ RUN mkdir /app/
 COPY . /app
 WORKDIR /app
 
+#clonning repo 
+RUN git clone https://github.com/help-iq2/Music1 /root/MusicTelethon
+#working directory 
+WORKDIR /root/MusicTelethon
+
+# Install requirements
 RUN pip3 install --upgrade pip
 RUN pip3 install -U -r requirements.txt
 
-CMD python3 main.py
+
