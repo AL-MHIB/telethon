@@ -1,70 +1,17 @@
-{
-  "name": "Telethon - Arab",
-  "description": "اهلا بك في تليثون العرب",
-  "logo": "",
-  "keywords": ["plugin","modular","productivity"],
-  "repository": "https://github.com/help-iq2/telethon",
-  "website": "#TODO",
-  "success_url": "#TODO",
-  "env": {
-    "ALIVE_NAME": {
-      "description": "هنا ضع اسم التلجرام الخاص بك",
-      "value": ""
-    },
-    "APP_ID": {
-      "description": "هنا ضع الايبي ايدي الخاص بك يتكون من ارقام", 
-      "value": ""
-    },
-    "API_HASH": {
-      "description": "هنا ضع الايبي هاش الخاص بك يتكون من احرف و ارقام",
-      "value": ""
-    },
-    "STRING_SESSION": {
-      "description": "هنا ضع كود تيرمكس الخاص بك",
-      "value": ""
-    },
-    "TG_BOT_USERNAME": {
-      "description": "هنا ضع معرف بوتك بدون @",
-      "value": ""
-    },
-    "TG_BOT_TOKEN": {
-      "description": "هنا ضع توكن بوتك",
-      "value": ""
-    },
-    "COMMAND_HAND_LER": {
-      "description": "ضع هنا رمز الأمر الذي تريدة أو اتركة كما هوة",
-      "value": "."
-    },
-    "TZ": {
-      "description": "المنطقه الزمنيه من القارة الخاصه بك وعاصمه بلدك",
-      "value": "Asia/Baghdad",
-      "required": false
-    },
-    "UPSTREAM_REPO": {
-      "description": "لاتغيرة",
-      "value": "TelethonAr",
-      "required": false
-    }
-  },
-  "addons": [{
-    "plan": "heroku-postgresql",
-    "options": {
-      "version": "12"
-    }
-  }],
-  "buildpacks": [{
-    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-  },{
-    "url":"https://github.com/heroku/heroku-buildpack-google-chrome"
-  },{
-    "url":"https://github.com/heroku/heroku-buildpack-chromedriver"
-  },{
-    "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
-  },{
-    "url": "https://github.com/heroku/heroku-buildpack-apt.git"
-  },{
-    "url": "https://github.com/chrismytton/heroku-buildpack-jq"
-  },{
-    "url": "heroku/python"
-  }]
-}
+{    "name": "ميـوزك تلـيثون",    
+"description": "اهلا وسهلا بك هذا النسخه الخاصه لتليثون ميوزك الاول هذا نسخه لايمكن لاي شخص استعمال تنصيبك او تشغيل الاغاني فقط انت تستطيع t.me/TelethonMusic .",
+    "logo": "https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
+    "keywords": [        "Telegram",        "MusicPlayer",        "VideoPlayer"    ],
+    "repository": "https://github.com/telenothelp/MUSIC",
+    "env": {        
+"SESSION": {            "description": "ضع هنا كود السيشن بايرو",
+            "required": true        },
+"UPSTREAM_REPO": {            "description": "ضع هنا كود السيشن بايرو", "value": "Music",
+            "required": true        },
+        "API_ID": {            "description": "ضع هنا كود الايبي ايدي",            "required": true        },
+        "HNDLR": {            "description": "ضع هنا رمز الامر الذي تريده كمثال ( . - ! - / - $ ) ",            "required": false,
+            "value": "$"        },        "API_HASH": {            "description": "ضع هنا كود الايبي هاش",            "required": true        },
+        "SUDO_USERS": {            "description": "ضع هنا ايدي حسابك",            "required": true        }    },
+    "addons": [],    "buildpacks": [        {            "url": "heroku/python"        },
+        {            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"        }    ],
+    "formation": {        "worker": {            "quantity": 1,            "size": "free"        }    },    "stack": "container"}
